@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Covid19_Info_System.Views.ArticlesPage"
+             xmlns:local="clr-namespace:Covid19_Info_System.ViewModels"  
+             xmlns:model="clr-namespace:Covid19_Info_System.Models"
+             Title="{Binding Title}">
+    
+    <ContentPage.Content>
+        <StackLayout x:DataType="local:ArticlesViewModel">
+            <RefreshView  Command="{Binding  LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Articles}"
+                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10" x:DataType="model:ArticleModel">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Grid.RowSpan="2"
+                             Text="{Binding Date, StringFormat='{0:MMM d}'}" />
+                                <Label Grid.Column="1"
+                             Text="{Binding Title}"
+                             FontAttributes="Bold" />
+
+                                <Label Grid.Column="1"
+                                    Grid.Row="1"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    FontSize="13">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans >
+                                                <Span Text="By: " FontAttributes="Bold"/>
+                                                <Span Text="{Binding Author}"/>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                    
+                                </Label>
+                                <Button Text="Edit"
+                                        IsVisible="{Binding Source={RelativeSource AncestorType={x:Type local:ArticlesViewModel}}, Path=IsAuth}"
+                                        Padding="0"
+                                        HeightRequest="30"
+                                        HorizontalOptions="Center"
+                                        Grid.Column="2"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:ArticlesViewModel}}, Path=EditItemCommand}"
+                                        CommandParameter="{Binding .}"
+                                        />
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ArticlesViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                                    </TapGestureRecognizer>
+                                </Grid.GestureRecognizers>
+                            </Grid>
+
+                        </DataTemplate>
+
+
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+            <Button x:Name="AddButton" Text="Add New" Command="{Binding AddItemCommand}"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

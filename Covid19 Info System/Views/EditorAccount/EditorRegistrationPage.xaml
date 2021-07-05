@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+              xmlns:local="clr-namespace:Covid19_Info_System.ViewModels.UsersVM"
+             x:Class="Covid19_Info_System.Views.EditorAccount.EditorRegistrationPage">
+    <ContentView ControlTemplate="{StaticResource PageTemplate}">
+        <ScrollView>
+            <Grid>
+                <StackLayout Padding="30,20" x:DataType="local:UserViewModel">
+                    <Button Command="{Binding CancelCommand}"   HorizontalOptions="EndAndExpand" BackgroundColor="Orange" Text="X" WidthRequest="50" HeightRequest="50" CornerRadius="25"/>
+                    <Label Text="Create Editor Profile" FontSize="25" FontAttributes="Bold" 
+                            TextColor="#011629" Margin="0,20,0,0"/>
+                    <BoxView HeightRequest="5" HorizontalOptions="StartAndExpand" Margin="0,0,0,30" WidthRequest="60" BackgroundColor="{StaticResource Primary}"/>
+                    <Label x:Name="ErrorMessage"  TextColor="red"/>
+                    <StackLayout ClassId="0" x:Name="BasicInfoSection">
+                        <Label Text="Your Name *"/>
+                        <Entry x:Name="Name" Text="{Binding Name, Mode=TwoWay}" Placeholder="Your Name" PlaceholderColor="{StaticResource Secondary}" />
+                        <Label Text="Email *"/>
+                        <Entry x:Name="Email" Text="{Binding Email, Mode=TwoWay}" Placeholder="Email" Keyboard="Email"  PlaceholderColor="{StaticResource Secondary}" />
+                        <Label Text="Phone *"/>
+                        <Entry x:Name="Phone" Text="{Binding Phone, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Phone"  PlaceholderColor="{StaticResource Secondary}" />
+                        <Label Text="Password *"/>
+                        <Entry x:Name="Password" Text="{Binding Password, Mode=TwoWay}" IsPassword="True" Keyboard="Default" Placeholder="Password"  PlaceholderColor="{StaticResource Secondary}" />
+
+                        <Button  ImageSource="baseline_chevron_right_white_24.xml" 
+                                 x:Name="Next"
+                                 Command="{Binding RegisterCommand}"
+                                 CommandParameter="{Binding .}"
+                                 BackgroundColor="Orange" HorizontalOptions="FillAndExpand" Text="Registration" Margin="0,20"/>
+                        <ActivityIndicator IsVisible="true" IsRunning="{Binding IsBusy, Mode=TwoWay}" x:Name="loading" HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentView>
+  
+</ContentPage>

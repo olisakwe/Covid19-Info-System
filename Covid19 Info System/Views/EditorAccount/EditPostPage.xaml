@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Covid19_Info_System.Views.Editor.EditPostPage">
+    <ContentView ControlTemplate="{StaticResource PageTemplate}">
+        <StackLayout Padding="30">
+            <Label x:Name="PostIdm" Text="{Binding Author, Mode=OneTime}" IsVisible="false" />
+            <Entry x:Name="PostAuthorId" IsEnabled="False" IsVisible="false"  Text="{Binding Author, Mode=OneWayToSource}" Placeholder="Your Title" Keyboard="Text" PlaceholderColor="Navy" />
+            <Entry x:Name="PostId" IsEnabled="False" IsVisible="false"   Text="{Binding PostId, Mode=OneWayToSource}" Placeholder="Your Title" Keyboard="Text" PlaceholderColor="Navy" />
+            <Entry x:Name="postTitle" Text="{Binding ArticleTitle, Mode=TwoWay}" Placeholder="Your Title" Keyboard="Text" PlaceholderColor="Navy" />
+            <Label Text="Content"/>
+            <Editor x:Name="content" Text="{Binding Content, Mode=TwoWay}" AutoSize="TextChanges"  Placeholder="Your Article"  PlaceholderColor="Navy" />
+
+            <Button  ImageSource="baseline_chevron_right_white_24.xml" Command="{Binding SaveCommand}" Text="Update" Margin="0,20"/>
+
+            <Button HorizontalOptions="End" Background="Maroon" 
+                    VerticalOptions="EndAndExpand"   Command="{Binding DeleteCommand}"  Text="Delete Post" Margin="0,20"/>
+
+        </StackLayout>
+
+    </ContentView>
+           
+        
+   
+        
+
+</ContentPage>

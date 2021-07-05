@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="Covid19_Info_System.Views.Dashboard"
+            
+             >
+   
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label 
+                VerticalOptions="Start"
+                   TextColor="Black"
+                HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="World " x:Name="CountryName" FontAttributes="Bold"/>
+                            <Span Text="New Covid 19 Statistic as at: " FontAttributes="Bold"/>
+                            <Span Text="" x:Name="ReportDate" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <microcharts:ChartView x:Name="chartView" Grid.Row="1"  />
+            <ActivityIndicator x:Name="loading" IsVisible="true" IsEnabled="True" IsRunning="True"
+                          Grid.Row="1"
+                         HorizontalOptions="CenterAndExpand" WidthRequest="90" HeightRequest="90"/>
+            <Label  Grid.Row="2"
+                VerticalOptions="Start"
+                   TextColor="Black"
+                HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Total Covid 19 Statistic as at: " FontAttributes="Bold"/>
+                            <Span Text="{Binding Path=Text, Source={x:Reference ReportDate}}" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <microcharts:ChartView x:Name="chartViewTotalCase" Grid.Row="3"  />
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

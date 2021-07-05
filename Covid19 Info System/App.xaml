@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Covid19_Info_System.App">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Secondary">#303F9F</Color>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Secondary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#332196F3" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+            <ControlTemplate x:Key="PageTemplate">
+                <ScrollView>
+                    <StackLayout>
+                        <StackLayout Padding="5" BackgroundColor="{StaticResource Primary}">
+                            <Button HorizontalOptions="StartAndExpand" Text="Back" CornerRadius="5" 
+                    Clicked="Button_Clicked"
+                    BackgroundColor="Transparent"/>
+                        </StackLayout>
+                        <ContentPresenter />
+                        <Label Text="Nigeria Army College of Environmental and Technology" 
+                   BackgroundColor="{StaticResource Primary}" 
+                   HorizontalTextAlignment="Center"
+                       TextColor="White" 
+                   VerticalOptions="EndAndExpand"
+                       HorizontalOptions="FillAndExpand" Padding="5" />
+                    </StackLayout>
+                </ScrollView>
+                
+            </ControlTemplate>
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>

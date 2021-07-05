@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Covid19_Info_System.Views.SettingsPage">
+    <ScrollView>
+        <StackLayout>
+
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Margin="0,0,0,20" BackgroundColor="{StaticResource Secondary}">
+                    <Image WidthRequest="118" HeightRequest="118" Source="DANLAMI.png" HorizontalOptions="CenterAndExpand" Aspect="AspectFill" VerticalOptions="CenterAndExpand"/>
+                    <Label TextColor="White" FontAttributes="Bold" FontSize="16" Text="Ajani Chinenye"  HorizontalOptions="CenterAndExpand"/>
+                    <Label LineBreakMode="TailTruncation" MaxLines="1" TextColor="White" Text="17/44432/DE"  HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <Frame Grid.Row="1" CornerRadius="20" Margin="0,5,0,0" VerticalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Label Text="This project is purposely designed to focus on providing a safe proof authentication system for android phone software, after a careful analysis of different authentication schemes present in mobile Phones"
+                                    TextColor="Black" HorizontalTextAlignment="Start" />
+                        <Label Text="Also it can further be adopted by other devices and computer usage for authentication. " 
+                                   TextColor="Black"
+                                   HorizontalTextAlignment="Start"/>
+
+
+                        
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

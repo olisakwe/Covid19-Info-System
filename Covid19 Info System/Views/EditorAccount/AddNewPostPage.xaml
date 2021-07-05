@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Covid19_Info_System.Views.Editor.AddNewPostPage"
+             Title="Add New Article">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <StackLayout Padding="30">
+                    <Label x:Name="ErrorMessage"  TextColor="red"/>
+                    <Label Text="Title"/>
+                    <Label x:Name="AuthorId" Text="{Binding Author, Mode=TwoWay}"/>
+                    <Entry x:Name="postTitle" Text="{Binding ArticleTitle, Mode=TwoWay}" Placeholder="Your Title" Keyboard="Text" PlaceholderColor="Navy" />
+                    <Label Text="Content"/>
+                    <Editor x:Name="content" Text="{Binding Content, Mode=TwoWay}" AutoSize="TextChanges"  Placeholder="Your Article"  PlaceholderColor="Navy" />
+
+                    <Button  ImageSource="baseline_chevron_right_white_24.xml" Command="{Binding SaveCommand}" Text="Add" Margin="0,20"/>
+
+                </StackLayout>
+                <Label Text="Nigeria Army College of Environmental and Technology" 
+                   BackgroundColor="{StaticResource Primary}" 
+                   HorizontalTextAlignment="Center"
+                       TextColor="White" 
+                   VerticalOptions="EndAndExpand"
+                       HorizontalOptions="FillAndExpand" Padding="5" />
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
