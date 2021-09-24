@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace Covid19_Info_System.Models
 {
     public class UserModel
     {
+        [PrimaryKey]
         public string Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
@@ -13,6 +15,6 @@ namespace Covid19_Info_System.Models
         public DateTime Date { get; set; }
         public string Password { get; set; }
         public  bool IsActive { get; set; }
-        public  bool IsAdmin { get; set; }
+        public  string Role { get; set; }
     }
 }

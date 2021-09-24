@@ -18,6 +18,7 @@ namespace Covid19_Info_System.Views
         public LoginUserPage()
         {
             InitializeComponent();
+            MyPanel.BackgroundColor = Color.FromRgba(252, 251, 252, 0.6);
            // this.BindingContext = new LoginViewModel();
         }
 
@@ -35,9 +36,7 @@ namespace Covid19_Info_System.Views
                 return;
             }
             App.LoginUser = users;
-            await Shell.Current.GoToAsync($"//{nameof(HomeTabPage)}");
-
-
+            App.Current.MainPage = new HomeTabPage();
 
         }
 
@@ -48,7 +47,7 @@ namespace Covid19_Info_System.Views
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            await Shell.Current.Navigation.PushModalAsync(new EditorRegistrationPage());
+            await App.Current.MainPage.Navigation.PushModalAsync(new EditorRegistrationPage());
         }
     }
 }

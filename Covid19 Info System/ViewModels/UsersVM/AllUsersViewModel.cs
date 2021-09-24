@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace Covid19_Info_System.ViewModels.UsersVM
 {
-    class AllUsersViewModel:BaseViewModel
+    public class AllUsersViewModel:BaseViewModel
     {
         public ObservableCollection<UserModel> Users { get; }
         public Command LoadItemsCommand { get; }

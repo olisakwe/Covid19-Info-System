@@ -17,6 +17,7 @@ namespace Covid19_Info_System.Views.EditorAccount
         public EditorRegistrationPage()
         {
             InitializeComponent();
+            MyPanel.BackgroundColor = Color.FromRgba(252, 251, 252, 0.6);
             BindingContext = userViewModel = new UserViewModel();
         }
 

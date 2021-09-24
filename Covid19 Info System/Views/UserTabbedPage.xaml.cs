@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Covid19_Info_System.Views.Admin.ManageEditor
+namespace Covid19_Info_System.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ManageEditors : ContentPage
+    public partial class UserTabbedPage : TabbedPage
     {
-        public ManageEditors()
+        public UserTabbedPage()
         {
             InitializeComponent();
         }

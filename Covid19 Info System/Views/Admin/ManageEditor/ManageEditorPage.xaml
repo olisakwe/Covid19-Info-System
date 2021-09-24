@@ -4,9 +4,64 @@
              x:Class="Covid19_Info_System.Views.Admin.ManageEditor.ManageEditorPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+            <StackLayout Padding="80" VerticalOptions="Start" BackgroundColor="{StaticResource Secondary}">
+                <Label Text="{Binding Source={x:Reference Name}, Path=Text}"
+                       TextColor="White"
+                VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
+                <Label Text="{Binding Source={x:Reference Email}, Path=Text}"
+                       TextColor="White"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <Frame Margin="20,0" VerticalOptions="CenterAndExpand" Padding="0" CornerRadius="10">
+                <StackLayout Padding="20">
+                    <Label Text="Name"
+                VerticalOptions="Start" 
+                HorizontalOptions="StartAndExpand" />
+                    <Entry x:Name="Name"
+                           FontSize="Medium" TextColor="Black"
+                VerticalOptions="Start" 
+                HorizontalOptions="FillAndExpand" />
+                    <Label Text="Email"
+                VerticalOptions="Start" 
+                HorizontalOptions="StartAndExpand" />
+                    <Label x:Name="Email"
+                           FontSize="Medium" TextColor="Black"
+                VerticalOptions="Start" 
+                HorizontalOptions="StartAndExpand" />
+                    <Label Text="Phone"
+                VerticalOptions="Start" 
+                HorizontalOptions="StartAndExpand" />
+                    <Entry x:Name="Phone"
+                           FontSize="Medium" TextColor="Black"
+                VerticalOptions="Start" 
+                HorizontalOptions="FillAndExpand" />
+                    <Label Text="Date Registered"
+                VerticalOptions="Start" 
+                HorizontalOptions="StartAndExpand" />
+                    <Label x:Name="Date"
+                           FontSize="Medium" TextColor="Black"
+                VerticalOptions="Start" 
+                HorizontalOptions="StartAndExpand" />
+
+                    <Label Text="Changed Password"
+                VerticalOptions="Start" 
+                HorizontalOptions="StartAndExpand" />
+                    <Entry x:Name="Password"
+                          IsPassword="True"
+                           FontSize="Medium" TextColor="Black"
+                VerticalOptions="Start" 
+                HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+            </Frame>
+            <StackLayout Orientation="Horizontal">
+                <Button HorizontalOptions="FillAndExpand" CornerRadius="10" Text="Update" Clicked="Button_Clicked" Margin="20"/>
+                <Button HorizontalOptions="FillAndExpand" CornerRadius="10" Text="De-activate" Clicked="Button_Clicked_1" BackgroundColor="Maroon" Margin="20"/>
+            </StackLayout>
+            
         </StackLayout>
+       
+        
     </ContentPage.Content>
 </ContentPage>

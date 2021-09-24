@@ -50,7 +50,7 @@ namespace Covid19_Info_System.Views
             }
                
             chartView.Chart = new DonutChart() { Entries = Worldentries };
-            chartViewTotalCase.Chart = new DonutChart() { Entries = Worldentries };
+            chartViewTotalCase.Chart = new DonutChart() { Entries = Worldentries};
             loading.IsRunning = false;
 
         }

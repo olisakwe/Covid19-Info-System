@@ -18,7 +18,7 @@ namespace Covid19_Info_System
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new LoginUserPage();
             DependencyService.Register<MockDataStore>();
             DependencyService.Register<ArticlesDataStore>();
             DependencyService.Register<UsersDataStore>();

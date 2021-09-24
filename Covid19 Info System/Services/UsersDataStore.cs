@@ -13,15 +13,7 @@ namespace Covid19_Info_System.Services
         public UsersDataStore()
         {
             //delte
-            Users = new List<UserModel>()
-            {
-                new UserModel { Id = Guid.NewGuid().ToString(), Name="Olisakwe IFeanyi", IsActive=true, Date=DateTime.Now, Email="Olisak@dd.com",IsAdmin=false, Phone="0903349595",Password="0000" },
-                new UserModel { Id = Guid.NewGuid().ToString(), Name="Olisakwe Johnson", IsActive=true, Date=DateTime.Now, Email="Johnson@dd.com",IsAdmin=false, Phone="070464634",Password="1111" },
-                new UserModel { Id = Guid.NewGuid().ToString(), Name="Abe IFeanyi", IsActive=true, Date=DateTime.Now, Email="Abe@dd.com",IsAdmin=false, Phone="0812345677",Password="2222" },
-                new UserModel { Id = Guid.NewGuid().ToString(), Name="Fake IFeanyi", IsActive=false, Date=DateTime.Now, Email="Fake@dd.com",IsAdmin=false, Phone="08054645",Password="3333" },
-                new UserModel { Id = Guid.NewGuid().ToString(), Name="Sir Joe IFeanyi", IsActive=true, Date=DateTime.Now, Email="Joe@dd.com",IsAdmin=false, Phone="0005667",Password="4444" },
-
-            };
+            
         }
 
         public async Task<bool> AddItemAsync(UserModel item)
