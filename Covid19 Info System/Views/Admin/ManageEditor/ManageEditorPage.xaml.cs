@@ -40,16 +40,18 @@ namespace Covid19_Info_System.Views.Admin.ManageEditor
             currentUser.Password = password;
             App.database.UpdateAsync(currentUser);
             DisplayAlert("Success", "User Update was Successfull", "Okay");
-            App.Current.MainPage.Navigation.PopAsync();
+            App.Current.MainPage.Navigation.PopModalAsync();
             return;
         }
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {
-            currentUser.IsActive = false;
+            if (currentUser.IsActive)
+                currentUser.IsActive = false;
+            else currentUser.IsActive = true;
             App.database.UpdateAsync(currentUser);
-            DisplayAlert("Success", "User De-activated", "Okay");
-            App.Current.MainPage.Navigation.PopAsync();
+            DisplayAlert("Success", "User Status Change", "Okay");
+            App.Current.MainPage.Navigation.PopModalAsync();
             return;
         }
     }

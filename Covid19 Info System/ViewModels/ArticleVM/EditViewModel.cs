@@ -68,7 +68,7 @@ namespace Covid19_Info_System.ViewModels.ArticleVM
             await DataStoreArticles.UpdateItemAsync(getArticle);
 
             // This will pop the current page off the navigation stack
-            await Shell.Current.GoToAsync("..");
+            await App.Current.MainPage.Navigation.PopModalAsync();
         }
 
         private async void OnDelete()
@@ -77,7 +77,7 @@ namespace Covid19_Info_System.ViewModels.ArticleVM
             await DataStoreArticles.DeleteItemAsync(PostId);
 
             // This will pop the current page off the navigation stack
-            await Shell.Current.GoToAsync("..");
+            await App.Current.MainPage.Navigation.PopModalAsync();
         }
     }
 }

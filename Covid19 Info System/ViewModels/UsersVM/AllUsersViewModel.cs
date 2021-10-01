@@ -43,7 +43,7 @@ namespace Covid19_Info_System.ViewModels.UsersVM
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.Navigation.PushModalAsync(new ManageEditorPage(user));
+            await App.Current.MainPage.Navigation.PushModalAsync(new ManageEditorPage(user));
         }
         
         public void OnAppearing()

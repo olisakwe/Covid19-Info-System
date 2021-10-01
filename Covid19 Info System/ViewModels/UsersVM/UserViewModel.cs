@@ -69,11 +69,14 @@ namespace Covid19_Info_System.ViewModels.UsersVM
         private async void OnCancel()
         {
             // This will pop the current page off the navigation stack
-            await Shell.Current.GoToAsync("..");
+            await App.Current.MainPage.Navigation.PopAsync();
         }
 
         private async void OnSave()
         {
+            var isActive = false;
+            if (!App.IsAdmin) { this.role = "a User"; }
+            else { this.role = "editor"; }
             UserModel user = new UserModel()
             {
                 Id = Guid.NewGuid().ToString(),
@@ -82,7 +85,7 @@ namespace Covid19_Info_System.ViewModels.UsersVM
                 Date = DateTime.Now,
                 Password = this.password,
                 Email = this.Email,
-                IsActive = false,
+                IsActive = true,
                 Role = this.role
             };
             

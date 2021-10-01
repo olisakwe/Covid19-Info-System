@@ -23,10 +23,12 @@ namespace Covid19_Info_System.Views
         {
             BindingContext = _viewModel = new ArticlesViewModel();
             base.OnAppearing();
-            if (App.LoginUser != null)
+            if (App.LoginUser != null && App.LoginUser.Role != "a User")
             {
                 AddButton.IsVisible = true;
                 
+
+
             } 
             else AddButton.IsVisible = false;
 

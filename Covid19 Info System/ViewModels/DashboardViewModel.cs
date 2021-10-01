@@ -54,7 +54,37 @@ namespace Covid19_Info_System.ViewModels
                      {
                          Label = "New Deaths",
                          ValueLabel =summary.Global.NewDeaths.ToString(),
-                         Color = SKColor.Parse("#9C0000")
+                         Color = SKColor.Parse("#FF0000")
+                     },
+                     };
+            return entries;
+        }
+
+     
+        public async Task<Entry[]> LoadCountrySummaryTotal()
+        {
+            var summary = await CovidSummaryAsync();
+            if (String.IsNullOrEmpty(summary?.ID.ToString()))
+                return new Entry[0];
+            var entries = new[]
+             {
+                     new Entry(summary.Global.TotalConfirmed)
+                     {
+                         Label = "Total Confirmed",
+                         ValueLabel = summary.Global.TotalConfirmed.ToString(),
+                         Color = SKColor.Parse("#1A153D")
+                     },
+                     new Entry(summary.Global.TotalRecovered)
+                     {
+                         Label = "Total Recoverded",
+                         ValueLabel = summary.Global.TotalRecovered.ToString(),
+                         Color = SKColor.Parse("#00CC0E")
+                     },
+                     new Entry(summary.Global.TotalDeaths)
+                     {
+                         Label = "Total Deaths",
+                         ValueLabel =summary.Global.TotalDeaths.ToString(),
+                         Color = SKColor.Parse("#FF0000")
                      },
                      };
             return entries;

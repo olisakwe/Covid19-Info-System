@@ -10,21 +10,22 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <StackLayout Margin="0,0,0,20" BackgroundColor="{StaticResource Secondary}">
-                    <Image WidthRequest="118" HeightRequest="118" Source="DANLAMI.png" HorizontalOptions="CenterAndExpand" Aspect="AspectFill" VerticalOptions="CenterAndExpand"/>
+                <StackLayout Margin="0,0,0,20" BackgroundColor="{StaticResource Primary}">
+                    <Image WidthRequest="118" HeightRequest="118" Source="logo.png" HorizontalOptions="CenterAndExpand" Aspect="AspectFill" VerticalOptions="CenterAndExpand"/>
                     <Label TextColor="White" FontAttributes="Bold" FontSize="16" Text="Ajani Chinenye"  HorizontalOptions="CenterAndExpand"/>
-                    <Label LineBreakMode="TailTruncation" MaxLines="1" TextColor="White" Text="17/44432/DE"  HorizontalOptions="CenterAndExpand"/>
+                    <Label LineBreakMode="TailTruncation" MaxLines="1" TextColor="White" Text="NACEST/COM/HND19/"  HorizontalOptions="CenterAndExpand"/>
                 </StackLayout>
                 <Frame Grid.Row="1" CornerRadius="20" Margin="0,5,0,0" VerticalOptions="FillAndExpand">
                     <StackLayout>
-                        <Label Text="This project is purposely designed to focus on providing a safe proof authentication system for android phone software, after a careful analysis of different authentication schemes present in mobile Phones"
-                                    TextColor="Black" HorizontalTextAlignment="Start" />
-                        <Label Text="Also it can further be adopted by other devices and computer usage for authentication. " 
+                        <Label Text="This research work convers the development of an Android Based Corona Virus Disease 2019 Signs, Symptoms and Precautions Information System, with a reference to only corona virus disease 2019 (COVID -19) and will be deployed on an android operating system (OS) only. That leverage health information technologies for epidemic monitoring, early warning, prevention and control and quick response. It's does not tend to elucidate other virus, function, or deployed on any other device apart from devices running android OS." 
                                    TextColor="Black"
                                    HorizontalTextAlignment="Start"/>
+                        <Label Text="The aim of this research is to develop a corona virus disease 2019 (COVID-19) android based information system that will help in reducing the transmission rate of COVID-19 by educating it users and providing quick response to the disease."
+                                    TextColor="Black" HorizontalTextAlignment="Start" />
 
 
-                        
+
+                        <Button BackgroundColor="Transparent" Clicked="Button_Clicked" />
                     </StackLayout>
                 </Frame>
             </Grid>

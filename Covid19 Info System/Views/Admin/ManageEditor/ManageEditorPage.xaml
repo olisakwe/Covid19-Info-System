@@ -4,7 +4,7 @@
              x:Class="Covid19_Info_System.Views.Admin.ManageEditor.ManageEditorPage">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="80" VerticalOptions="Start" BackgroundColor="{StaticResource Secondary}">
+            <StackLayout Padding="80" VerticalOptions="Start" BackgroundColor="{StaticResource Primary}">
                 <Label Text="{Binding Source={x:Reference Name}, Path=Text}"
                        TextColor="White"
                 VerticalOptions="Start" 
@@ -57,7 +57,7 @@
             </Frame>
             <StackLayout Orientation="Horizontal">
                 <Button HorizontalOptions="FillAndExpand" CornerRadius="10" Text="Update" Clicked="Button_Clicked" Margin="20"/>
-                <Button HorizontalOptions="FillAndExpand" CornerRadius="10" Text="De-activate" Clicked="Button_Clicked_1" BackgroundColor="Maroon" Margin="20"/>
+                <Button HorizontalOptions="FillAndExpand" CornerRadius="10" Text="Change Status" Clicked="Button_Clicked_1" BackgroundColor="Maroon" Margin="20"/>
             </StackLayout>
             
         </StackLayout>

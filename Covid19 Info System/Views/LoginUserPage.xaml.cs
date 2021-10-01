@@ -24,20 +24,33 @@ namespace Covid19_Info_System.Views
 
         private async void LoginButton(object sender, EventArgs e)
         {
+            App.LoginUser = null;
+            App.IsAdmin = false;
+            loading.IsRunning = true;
             var email = UserEmail.Text;
             var password = UserPassword.Text;
+            if(email=="admin" && password=="123456789")
+            {
+                App.IsAdmin = true;
+                App.Current.MainPage = new AdminTabbedPage();
+                loading.IsRunning = false;return;
+            }
 
             UsersDataStore usersDataStore = new UsersDataStore();
             var users = await usersDataStore.CheckUserExist(email, password);
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || users == null)
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || users == null || !users.IsActive)
             {
-                await DisplayAlert("Error", "Please check your login details", "Okey");
+               
+                await DisplayAlert("Error", "Please check your login details ", "Okey");
+                loading.IsRunning = false;
                 return;
             }
             App.LoginUser = users;
-            App.Current.MainPage = new HomeTabPage();
-
+            if(App.LoginUser.Role== "a User")
+                 App.Current.MainPage = new UserTabbedPage();
+            else App.Current.MainPage = new HomeTabPage();
+            loading.IsRunning = false; return;
         }
 
         private async void ClosePageButton(object sender, EventArgs e)

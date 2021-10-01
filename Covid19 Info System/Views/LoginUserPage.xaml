@@ -12,7 +12,7 @@
             <StackLayout Padding="30" x:Name="MyPanel">
                 
                 <Label Text="Sign in" FontSize="25" FontAttributes="Bold" 
-               TextColor="Navy" Margin="0,50,0,0"/>
+               TextColor="DarkBlue" Margin="0,50,0,0"/>
                 <BoxView HeightRequest="5" HorizontalOptions="StartAndExpand" Margin="0,0,0,50" WidthRequest="60" />
                 <Label x:Name="ErrorMessage"  TextColor="red"/>
                 <Label Text="Email"/>
@@ -32,8 +32,8 @@
                     </Label>-->
                 </StackLayout>
 
-                <Button Background="orange" Clicked="LoginButton" ImageSource="baseline_chevron_right_white_24.xml" Text="Sign in" Margin="0,20"/>
-               
+                <Button Clicked="LoginButton" ImageSource="baseline_chevron_right_white_24.xml" Text="Sign in" Margin="0,20"/>
+                <ActivityIndicator IsVisible="true" x:Name="loading" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
             <Label Text="Nigeria Army College of Environmental and Technology" 
                    BackgroundColor="{StaticResource Primary}" 

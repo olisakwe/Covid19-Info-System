@@ -16,5 +16,20 @@ namespace Covid19_Info_System.Views
         {
             InitializeComponent();
         }
+        protected override bool OnBackButtonPressed()
+        {
+            this.logout();
+            //  base.OnBackButtonPressed();
+            return true;
+        }
+        async void logout()
+        {
+            var response = await DisplayAlert("info", "do you want to logout?", "Yes", "No");
+            if (response)
+            {
+                App.Current.MainPage = new LoginUserPage();
+                return;
+            }
+        }
     }
 }

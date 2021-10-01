@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Covid19_Info_System.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,20 @@ namespace Covid19_Info_System.Views
         public SettingsPage()
         {
             InitializeComponent();
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            var result = await DisplayAlert("Confirm", "are you sure you want to reset", "Yes", "No");
+            if (result)
+            {
+                await App.database.DropTableAsync<ArticleModel>();
+                await App.database.DropTableAsync<UserModel>();
+
+                await App.database.CreateTableAsync<ArticleModel>();
+                await App.database.CreateTableAsync<UserModel>();
+                App.Current.MainPage = new LoginUserPage();
+            }
         }
     }
 }

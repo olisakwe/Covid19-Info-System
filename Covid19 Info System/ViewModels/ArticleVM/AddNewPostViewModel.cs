@@ -64,7 +64,7 @@ namespace Covid19_Info_System.ViewModels
                 await DataStoreArticles.AddItemAsync(newItem);
 
             // This will pop the current page off the navigation stack
-            await Shell.Current.GoToAsync("..");
+            await App.Current.MainPage.Navigation.PopModalAsync();
         }
     }
 }

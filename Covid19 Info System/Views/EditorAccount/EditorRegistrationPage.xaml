@@ -21,16 +21,16 @@
                         <Label Text="Phone *"/>
                         <Entry x:Name="Phone" Text="{Binding Phone, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Phone"  
                                PlaceholderColor="{StaticResource Secondary}" />
-                        <Label Text="I want to be *"/>
-                        <Picker x:Name="Role" 
+                        <!--<Label Text="I want to be *"/>-->
+                        <!--<Picker x:Name="Role" 
                                 Title="Select Role"
                                SelectedItem="{Binding Role, Mode=TwoWay}"  
                                >
                             <Picker.Items>
                                 <x:String>a User</x:String>
-                                <x:String>an Editor</x:String>
+                                <x:String >an Editor</x:String>
                             </Picker.Items>
-                        </Picker>
+                        </Picker>-->
                         
                         <Label Text="Password *"/>
 

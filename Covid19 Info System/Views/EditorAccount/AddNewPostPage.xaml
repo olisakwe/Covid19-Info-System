@@ -10,7 +10,7 @@
                 <StackLayout Padding="30">
                     <Label x:Name="ErrorMessage"  TextColor="red"/>
                     <Label Text="Title"/>
-                    <Label x:Name="AuthorId" Text="{Binding Author, Mode=TwoWay}"/>
+                    <Label x:Name="AuthorId" IsVisible="false" Text="{Binding Author, Mode=TwoWay}"/>
                     <Entry x:Name="postTitle" Text="{Binding ArticleTitle, Mode=TwoWay}" Placeholder="Your Title" Keyboard="Text" PlaceholderColor="Navy" />
                     <Label Text="Content"/>
                     <Editor x:Name="content" Text="{Binding Content, Mode=TwoWay}" AutoSize="TextChanges"  Placeholder="Your Article"  PlaceholderColor="Navy" />

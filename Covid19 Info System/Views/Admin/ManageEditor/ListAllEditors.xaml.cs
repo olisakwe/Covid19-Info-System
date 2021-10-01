@@ -1,4 +1,5 @@
 ﻿using Covid19_Info_System.ViewModels.UsersVM;
+using Covid19_Info_System.Views.EditorAccount;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,11 @@ namespace Covid19_Info_System.Views.Admin.ManageEditor
 
             //this.Title = _viewModel.Title;
             _viewModel.OnAppearing();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage.Navigation.PushModalAsync(new EditorRegistrationPage());
         }
     }
 }

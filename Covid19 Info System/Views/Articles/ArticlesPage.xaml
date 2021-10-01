@@ -4,10 +4,12 @@
              x:Class="Covid19_Info_System.Views.ArticlesPage"
              xmlns:local="clr-namespace:Covid19_Info_System.ViewModels"  
              xmlns:model="clr-namespace:Covid19_Info_System.Models"
-             Title="{Binding Title}">
+             BackgroundColor="#eee"
+             >
     
     <ContentPage.Content>
-        <StackLayout x:DataType="local:ArticlesViewModel">
+        <StackLayout x:DataType="local:ArticlesViewModel" BackgroundColor="#fff">
+            <Image Source="bgCoro.jpg" Aspect="AspectFill"/>
             <RefreshView  Command="{Binding  LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
                 <CollectionView x:Name="ItemsListView"
                 ItemsSource="{Binding Articles}"
@@ -25,6 +27,7 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Label Grid.RowSpan="2"
+                                       TextColor="Black"
                              Text="{Binding Date, StringFormat='{0:MMM d}'}" />
                                 <Label Grid.Column="1"
                              Text="{Binding Title}"
@@ -32,6 +35,7 @@
 
                                 <Label Grid.Column="1"
                                     Grid.Row="1"
+                                       TextColor="Black"
                                     LineBreakMode="NoWrap"
                                     Style="{DynamicResource ListItemDetailTextStyle}"
                                     FontSize="13">
@@ -46,8 +50,10 @@
                                     
                                 </Label>
                                 <Button Text="Edit"
+                                        
                                         IsVisible="{Binding Source={RelativeSource AncestorType={x:Type local:ArticlesViewModel}}, Path=IsAuth}"
                                         Padding="0"
+                                        BackgroundColor="{StaticResource Primary}"
                                         HeightRequest="30"
                                         HorizontalOptions="Center"
                                         Grid.Column="2"
@@ -69,7 +75,10 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
-            <Button x:Name="AddButton" Text="Add New" Command="{Binding AddItemCommand}"/>
+            <Button BackgroundColor="{StaticResource Primary}" 
+                    Margin="20" 
+                    x:Name="AddButton" Text="Add New" 
+                    Command="{Binding AddItemCommand}"/>
         </StackLayout>
         
     </ContentPage.Content>

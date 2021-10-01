@@ -13,6 +13,7 @@ namespace Covid19_Info_System
     {
         public static SQLite.SQLiteAsyncConnection database;
         public static UserModel LoginUser { get; set; }
+        public static bool IsAdmin =false;
 
         public App()
         {

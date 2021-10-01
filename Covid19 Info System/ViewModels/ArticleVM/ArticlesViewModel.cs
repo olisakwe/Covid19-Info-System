@@ -43,7 +43,7 @@ namespace Covid19_Info_System.ViewModels
 
         private bool CheckUserAuth()
         {
-            if (App.LoginUser != null) return true;
+            if (App.LoginUser != null && App.LoginUser.Role != "a User") return true;
             return false;
         }
 
@@ -53,7 +53,7 @@ namespace Covid19_Info_System.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.Navigation.PushModalAsync(new ArticleDetailPage(Articles));
+            await App.Current.MainPage.Navigation.PushModalAsync(new ArticleDetailPage(Articles));
         }
         private async void EditArticlePage(ArticleModel Articles)
         {
@@ -61,11 +61,11 @@ namespace Covid19_Info_System.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.Navigation.PushModalAsync(new EditPostPage(Articles));
+            await App.Current.MainPage.Navigation.PushModalAsync(new EditPostPage(Articles));
         }
         private async void OnAddItem()
         {
-             await Shell.Current.GoToAsync(nameof(AddNewPostPage));
+             await App.Current.MainPage.Navigation.PushModalAsync(new AddNewPostPage());
         }
         public void OnAppearing()
         {

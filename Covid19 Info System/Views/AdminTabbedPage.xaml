@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:manageeditor="clr-namespace:Covid19_Info_System.Views.Admin.ManageEditor" 
+            xmlns:Views="clr-namespace:Covid19_Info_System.Views"
+            x:Class="Covid19_Info_System.Views.AdminTabbedPage">
+  <!--Pages can be added as references or inline-->
+
+    <!--<Views:Dashboard Title="Dashboard" />-->
+    <Views:ArticlesPage IconImageSource="baseline_forum_24.xml" Title="Articles" />
+    <!--<Views:ReportCasePage IconImageSource="baseline_attribution_24.xml" Title="Report Case" />-->
+    <manageeditor:ListAllEditors IconImageSource="baseline_admin_panel_settings_24.xml" Title="All Users"/>
+    <Views:SettingsPage IconImageSource="baseline_forum_24.xml" Title="About App" />
+</TabbedPage>

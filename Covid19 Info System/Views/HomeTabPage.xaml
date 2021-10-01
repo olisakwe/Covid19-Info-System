@@ -1,19 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" xmlns:Views="clr-namespace:Covid19_Info_System.Views" xmlns:manageeditor="clr-namespace:Covid19_Info_System.Views.Admin.ManageEditor"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
+            xmlns:Views="clr-namespace:Covid19_Info_System.Views" xmlns:manageeditor="clr-namespace:Covid19_Info_System.Views.Admin.ManageEditor"
             BackgroundColor="#fff" 
-            android:TabbedPage.ToolbarPlacement="Bottom" 
-            android:TabbedPage.BarItemColor="#011629"
+            android:TabbedPage.ToolbarPlacement="Top" 
+            android:TabbedPage.BarItemColor="{StaticResource Primary}"
             android:TabbedPage.BarSelectedItemColor="orange"
             Title="Dashboard"
             x:Class="Covid19_Info_System.Views.HomeTabPage"
-             Shell.NavBarIsVisible="True">
-
-    <Views:Dashboard Title="Dashboard" />
-    <Views:ArticlesPage Title="Articles" />
-    <Views:ReportCasePage Title="Report Case" />
-    <Views:SettingsPage Title="About App" />
-    <manageeditor:ListAllEditors Title="All Editor"/>
+             >
+    <Views:ArticlesPage  IconImageSource="baseline_forum_24.xml" Title="Articles" />
+    <Views:SettingsPage IconImageSource="baseline_forum_24.xml" Title="About App" />
 
 </TabbedPage>

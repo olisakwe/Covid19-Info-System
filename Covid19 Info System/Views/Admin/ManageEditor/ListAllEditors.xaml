@@ -22,8 +22,8 @@
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
-                                <Label Grid.RowSpan="2"
-                             Text="{Binding Date, StringFormat='{0:MMM d}'}" />
+                                <Image Grid.RowSpan="2"
+                            Source="baseline_person_pin_24.xml" />
                                 <Label Grid.Column="1"
                              Text="{Binding Name}"
                              FontAttributes="Bold" />
@@ -60,7 +60,13 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
-           
+            <Button Text="Add Editor" 
+                    VerticalOptions="FillAndExpand"
+                    Margin="20"
+                    Clicked="Button_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    TextColor="#fff"
+                    BackgroundColor="{StaticResource Primary}"/>
         </StackLayout>
     </ContentView>
 </ContentPage>

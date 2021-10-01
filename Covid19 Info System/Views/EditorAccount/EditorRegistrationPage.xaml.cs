@@ -23,7 +23,7 @@ namespace Covid19_Info_System.Views.EditorAccount
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.Navigation.PopToRootAsync();
+            //await Shell.Current.Navigation.PopToRootAsync();
         }
     }
 }
